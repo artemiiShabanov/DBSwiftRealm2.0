@@ -9,11 +9,32 @@
 import UIKit
 
 class FriendInfoViewController: UIViewController {
+    
+    var friend:Friend? = nil
+    
     @IBOutlet weak var FIOLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
     @IBOutlet weak var socialNumberLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        if let selectedFriend = friend {
+            FIOLabel.text = selectedFriend.FIO
+            phoneNumberLabel.text = String(selectedFriend.phoneNumber)
+            socialNumberLabel.text = selectedFriend.socialNumber
+            emailLabel.text = selectedFriend.email
+            commentLabel.text = selectedFriend.comment
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? FriendEditViewController {
+            destination.friend = friend!
+        }
+    }
     
     @IBAction func giveButtonPress(_ sender: Any) {
     }

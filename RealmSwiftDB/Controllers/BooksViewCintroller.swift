@@ -11,6 +11,7 @@ import RealmSwift
 
 class BooksViewController: UITableViewController {
     
+    var book: Book? = nil
     var books: [Book] = []
     var genreFilter: Genre? = nil
     var pubHouseFilter: PublishingHouse? = nil
@@ -18,6 +19,19 @@ class BooksViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        /*try! realm.write {
+            let genre = Genre()
+            genre.name = "aaaa"
+            let book = Book()
+            book.name = "a"
+            book.author = "author"
+            book.pubYear = 2010
+            book.translator = "au1"
+            realm.add(genre)
+            book.genres.append(genre)
+            realm.add(book)
+        }*/
+        
         //filteres by genre
         if let filter = genreFilter {
             books = realm.objects(Book.self).map{$0}
@@ -28,15 +42,22 @@ class BooksViewController: UITableViewController {
                 }
             }
             books = booksTmp
+            tableView.reloadData()
             return
         }
         //filtered by publication house
         if let filter = pubHouseFilter{
             books = realm.objects(Book.self).filter(NSPredicate(format: "pubHouse == %@", filter)).map{$0}
+            tableView.reloadData()
             return
         }
         //no any filtration
         books = realm.objects(Book.self).map{$0}
+        tableView.reloadData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        tableView.reloadData()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -57,9 +78,15 @@ class BooksViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        /*word = words[indexPath.row]
-         tableView.deselectRow(at: indexPath, animated: true)
-         segueTarget = .Word
-         self.performSegue(withIdentifier: , sender: self)*/
+        book = books[indexPath.row]
+        tableView.deselectRow(at: indexPath, animated: true)
+        self.performSegue(withIdentifier: "BookInfoSegue", sender: self)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? BookInfoViewController {
+            destination.book = book!
+        }
     }
 }

@@ -11,12 +11,24 @@ import RealmSwift
 
 class FriendsViewController: UITableViewController {
     
-    var friends: Results<Friend>!
+    var friend: Friend? = nil
+    var friends: [Friend] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //friends = realm.objects(Friend.self)
+        try! realm.write {
+            let friend = Friend()
+            friend.FIO = "aa"
+            realm.add(friend)
+        }
+        
+        friends = realm.objects(Friend.self).map{$0}
+        tableView.reloadData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        tableView.reloadData()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -24,7 +36,7 @@ class FriendsViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return friends?.count ?? 0
+        return friends.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -37,10 +49,15 @@ class FriendsViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        /*word = words[indexPath.row]
-         tableView.deselectRow(at: indexPath, animated: true)
-         segueTarget = .Word
-         self.performSegue(withIdentifier: , sender: self)*/
+        friend = friends[indexPath.row]
+        tableView.deselectRow(at: indexPath, animated: true)
+        self.performSegue(withIdentifier: "FriendInfoSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? FriendInfoViewController {
+            destination.friend = friend!
+        }
     }
 }
 
