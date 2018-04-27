@@ -51,7 +51,7 @@
                             <outlet property="delegate" destination="thG-tu-JQr" id="CtY-q3-PK6"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Friends" id="wQI-87-MjW"/>
+                    <tabBarItem key="tabBarItem" title="Friends" image="img_friend" selectedImage="img_friend" id="wQI-87-MjW"/>
                     <navigationItem key="navigationItem" id="3B5-0M-Run"/>
                     <connections>
                         <segue destination="cnm-57-dRj" kind="show" identifier="FriendInfoSegue" id="cFx-5T-412"/>
@@ -118,7 +118,7 @@
                             <outlet property="delegate" destination="JdP-Ry-ZFN" id="pMX-TH-3RW"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Books" id="vvx-xM-ZKi"/>
+                    <tabBarItem key="tabBarItem" title="Books" image="img_book" selectedImage="img_book" id="vvx-xM-ZKi"/>
                     <navigationItem key="navigationItem" id="MTI-f1-rTU"/>
                     <connections>
                         <segue destination="uQH-Rn-tVX" kind="show" identifier="BookInfoSegue" id="wzZ-6U-rhx"/>
@@ -615,7 +615,7 @@
                             <outlet property="delegate" destination="zJy-kr-JHH" id="GST-xb-w8c"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Publishing Houses" id="97S-em-Bc4"/>
+                    <tabBarItem key="tabBarItem" title="Publishing Houses" image="img_house" selectedImage="img_house" id="97S-em-Bc4"/>
                     <connections>
                         <segue destination="JdP-Ry-ZFN" kind="show" identifier="PublishingHouseToBookSegue" id="Ev4-hm-Woc"/>
                     </connections>
@@ -663,7 +663,7 @@
                             <outlet property="delegate" destination="mml-Ix-abK" id="oCT-M0-GqK"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Genre" id="AmT-9W-z7J"/>
+                    <tabBarItem key="tabBarItem" title="Genre" image="img_genre" selectedImage="img_genre" id="AmT-9W-z7J"/>
                     <connections>
                         <segue destination="JdP-Ry-ZFN" kind="show" identifier="GenreToBookSegue" id="yG6-ZD-0VT"/>
                     </connections>
@@ -1000,6 +1000,12 @@
             <point key="canvasLocation" x="3301.5999999999999" y="2386.9565217391305"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="img_book" width="29" height="29"/>
+        <image name="img_friend" width="29" height="29"/>
+        <image name="img_genre" width="29" height="29"/>
+        <image name="img_house" width="29" height="29"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="yG6-ZD-0VT"/>
     </inferredMetricsTieBreakers>
