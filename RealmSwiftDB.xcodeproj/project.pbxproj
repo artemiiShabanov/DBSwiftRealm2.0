@@ -7,21 +7,57 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8961E73D478CE94639F775A1 /* Pods_RealmSwiftDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E210C26E02B85E390DCA627F /* Pods_RealmSwiftDB.framework */; };
 		A4555C1220934E070043CA8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4555C1120934E070043CA8E /* AppDelegate.swift */; };
-		A4555C1420934E080043CA8E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4555C1320934E080043CA8E /* ViewController.swift */; };
-		A4555C1720934E080043CA8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4555C1520934E080043CA8E /* Main.storyboard */; };
 		A4555C1920934E090043CA8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4555C1820934E090043CA8E /* Assets.xcassets */; };
 		A4555C1C20934E090043CA8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4555C1A20934E090043CA8E /* LaunchScreen.storyboard */; };
+		A4555C27209351800043CA8E /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4555C26209351800043CA8E /* Book.swift */; };
+		A4555C292093518A0043CA8E /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4555C282093518A0043CA8E /* Friend.swift */; };
+		A4555C2B209351990043CA8E /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4555C2A209351990043CA8E /* Genre.swift */; };
+		A4555C2D209351A80043CA8E /* PublishingHouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4555C2C209351A80043CA8E /* PublishingHouse.swift */; };
+		A4555C2F209351B80043CA8E /* Borrowing.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4555C2E209351B80043CA8E /* Borrowing.swift */; };
+		A4555C38209354530043CA8E /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4555C30209354510043CA8E /* FriendsViewController.swift */; };
+		A4555C39209354530043CA8E /* BookInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4555C31209354520043CA8E /* BookInfoViewController.swift */; };
+		A4555C3A209354530043CA8E /* BooksViewCintroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4555C32209354520043CA8E /* BooksViewCintroller.swift */; };
+		A4555C3B209354530043CA8E /* BookEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4555C33209354520043CA8E /* BookEditViewController.swift */; };
+		A4555C3C209354530043CA8E /* GenresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4555C34209354520043CA8E /* GenresViewController.swift */; };
+		A4555C3D209354530043CA8E /* PublishingHousesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4555C35209354520043CA8E /* PublishingHousesViewController.swift */; };
+		A4555C3E209354530043CA8E /* FriendInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4555C36209354520043CA8E /* FriendInfoViewController.swift */; };
+		A4555C3F209354530043CA8E /* FriendEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4555C37209354530043CA8E /* FriendEditViewController.swift */; };
+		A4555C45209354D60043CA8E /* GenreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4555C41209354D50043CA8E /* GenreTableViewCell.swift */; };
+		A4555C46209354D60043CA8E /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4555C42209354D50043CA8E /* BookTableViewCell.swift */; };
+		A4555C47209354D60043CA8E /* PublishingHouseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4555C43209354D50043CA8E /* PublishingHouseTableViewCell.swift */; };
+		A4555C48209354D60043CA8E /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4555C44209354D60043CA8E /* FriendTableViewCell.swift */; };
+		A4555C4A209354F00043CA8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4555C49209354F00043CA8E /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6BC791CAF9F307F7AC1205A3 /* Pods-RealmSwiftDB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmSwiftDB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RealmSwiftDB/Pods-RealmSwiftDB.debug.xcconfig"; sourceTree = "<group>"; };
 		A4555C0E20934E070043CA8E /* RealmSwiftDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealmSwiftDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4555C1120934E070043CA8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A4555C1320934E080043CA8E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A4555C1620934E080043CA8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A4555C1820934E090043CA8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A4555C1B20934E090043CA8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A4555C1D20934E090043CA8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4555C26209351800043CA8E /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		A4555C282093518A0043CA8E /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		A4555C2A209351990043CA8E /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
+		A4555C2C209351A80043CA8E /* PublishingHouse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishingHouse.swift; sourceTree = "<group>"; };
+		A4555C2E209351B80043CA8E /* Borrowing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Borrowing.swift; sourceTree = "<group>"; };
+		A4555C30209354510043CA8E /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		A4555C31209354520043CA8E /* BookInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookInfoViewController.swift; sourceTree = "<group>"; };
+		A4555C32209354520043CA8E /* BooksViewCintroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooksViewCintroller.swift; sourceTree = "<group>"; };
+		A4555C33209354520043CA8E /* BookEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookEditViewController.swift; sourceTree = "<group>"; };
+		A4555C34209354520043CA8E /* GenresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenresViewController.swift; sourceTree = "<group>"; };
+		A4555C35209354520043CA8E /* PublishingHousesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublishingHousesViewController.swift; sourceTree = "<group>"; };
+		A4555C36209354520043CA8E /* FriendInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendInfoViewController.swift; sourceTree = "<group>"; };
+		A4555C37209354530043CA8E /* FriendEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendEditViewController.swift; sourceTree = "<group>"; };
+		A4555C41209354D50043CA8E /* GenreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenreTableViewCell.swift; sourceTree = "<group>"; };
+		A4555C42209354D50043CA8E /* BookTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
+		A4555C43209354D50043CA8E /* PublishingHouseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublishingHouseTableViewCell.swift; sourceTree = "<group>"; };
+		A4555C44209354D60043CA8E /* FriendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
+		A4555C49209354F00043CA8E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B91EF739CC90F2E9CD221199 /* Pods-RealmSwiftDB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmSwiftDB.release.xcconfig"; path = "Pods/Target Support Files/Pods-RealmSwiftDB/Pods-RealmSwiftDB.release.xcconfig"; sourceTree = "<group>"; };
+		E210C26E02B85E390DCA627F /* Pods_RealmSwiftDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RealmSwiftDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +65,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8961E73D478CE94639F775A1 /* Pods_RealmSwiftDB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		559DA1F8E6253D0D2E748FC6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E210C26E02B85E390DCA627F /* Pods_RealmSwiftDB.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		93EB2E629D2149E223331B99 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6BC791CAF9F307F7AC1205A3 /* Pods-RealmSwiftDB.debug.xcconfig */,
+				B91EF739CC90F2E9CD221199 /* Pods-RealmSwiftDB.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A4555C0520934E070043CA8E = {
 			isa = PBXGroup;
 			children = (
 				A4555C1020934E070043CA8E /* RealmSwiftDB */,
 				A4555C0F20934E070043CA8E /* Products */,
+				93EB2E629D2149E223331B99 /* Pods */,
+				559DA1F8E6253D0D2E748FC6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +110,62 @@
 		A4555C1020934E070043CA8E /* RealmSwiftDB */ = {
 			isa = PBXGroup;
 			children = (
+				A4555C252093515E0043CA8E /* Models */,
+				A4555C242093515C0043CA8E /* Controllers */,
+				A4555C232093515A0043CA8E /* Views */,
 				A4555C1120934E070043CA8E /* AppDelegate.swift */,
-				A4555C1320934E080043CA8E /* ViewController.swift */,
-				A4555C1520934E080043CA8E /* Main.storyboard */,
 				A4555C1820934E090043CA8E /* Assets.xcassets */,
 				A4555C1A20934E090043CA8E /* LaunchScreen.storyboard */,
 				A4555C1D20934E090043CA8E /* Info.plist */,
 			);
 			path = RealmSwiftDB;
+			sourceTree = "<group>";
+		};
+		A4555C232093515A0043CA8E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A4555C49209354F00043CA8E /* Main.storyboard */,
+				A4555C40209354AE0043CA8E /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A4555C242093515C0043CA8E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A4555C32209354520043CA8E /* BooksViewCintroller.swift */,
+				A4555C33209354520043CA8E /* BookEditViewController.swift */,
+				A4555C31209354520043CA8E /* BookInfoViewController.swift */,
+				A4555C37209354530043CA8E /* FriendEditViewController.swift */,
+				A4555C36209354520043CA8E /* FriendInfoViewController.swift */,
+				A4555C30209354510043CA8E /* FriendsViewController.swift */,
+				A4555C34209354520043CA8E /* GenresViewController.swift */,
+				A4555C35209354520043CA8E /* PublishingHousesViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A4555C252093515E0043CA8E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A4555C26209351800043CA8E /* Book.swift */,
+				A4555C282093518A0043CA8E /* Friend.swift */,
+				A4555C2A209351990043CA8E /* Genre.swift */,
+				A4555C2C209351A80043CA8E /* PublishingHouse.swift */,
+				A4555C2E209351B80043CA8E /* Borrowing.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A4555C40209354AE0043CA8E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A4555C42209354D50043CA8E /* BookTableViewCell.swift */,
+				A4555C44209354D60043CA8E /* FriendTableViewCell.swift */,
+				A4555C41209354D50043CA8E /* GenreTableViewCell.swift */,
+				A4555C43209354D50043CA8E /* PublishingHouseTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +175,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A4555C2020934E090043CA8E /* Build configuration list for PBXNativeTarget "RealmSwiftDB" */;
 			buildPhases = (
+				BCFB4D872AB057EB77F85492 /* [CP] Check Pods Manifest.lock */,
 				A4555C0A20934E070043CA8E /* Sources */,
 				A4555C0B20934E070043CA8E /* Frameworks */,
 				A4555C0C20934E070043CA8E /* Resources */,
+				0E548BA87329202F37E88AE3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -122,35 +228,84 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4555C4A209354F00043CA8E /* Main.storyboard in Resources */,
 				A4555C1C20934E090043CA8E /* LaunchScreen.storyboard in Resources */,
 				A4555C1920934E090043CA8E /* Assets.xcassets in Resources */,
-				A4555C1720934E080043CA8E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0E548BA87329202F37E88AE3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-RealmSwiftDB/Pods-RealmSwiftDB-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RealmSwiftDB/Pods-RealmSwiftDB-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BCFB4D872AB057EB77F85492 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RealmSwiftDB-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A4555C0A20934E070043CA8E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4555C1420934E080043CA8E /* ViewController.swift in Sources */,
+				A4555C3D209354530043CA8E /* PublishingHousesViewController.swift in Sources */,
+				A4555C47209354D60043CA8E /* PublishingHouseTableViewCell.swift in Sources */,
+				A4555C3C209354530043CA8E /* GenresViewController.swift in Sources */,
+				A4555C38209354530043CA8E /* FriendsViewController.swift in Sources */,
+				A4555C39209354530043CA8E /* BookInfoViewController.swift in Sources */,
+				A4555C2D209351A80043CA8E /* PublishingHouse.swift in Sources */,
+				A4555C3B209354530043CA8E /* BookEditViewController.swift in Sources */,
+				A4555C45209354D60043CA8E /* GenreTableViewCell.swift in Sources */,
+				A4555C3F209354530043CA8E /* FriendEditViewController.swift in Sources */,
+				A4555C46209354D60043CA8E /* BookTableViewCell.swift in Sources */,
 				A4555C1220934E070043CA8E /* AppDelegate.swift in Sources */,
+				A4555C3E209354530043CA8E /* FriendInfoViewController.swift in Sources */,
+				A4555C27209351800043CA8E /* Book.swift in Sources */,
+				A4555C292093518A0043CA8E /* Friend.swift in Sources */,
+				A4555C2F209351B80043CA8E /* Borrowing.swift in Sources */,
+				A4555C2B209351990043CA8E /* Genre.swift in Sources */,
+				A4555C48209354D60043CA8E /* FriendTableViewCell.swift in Sources */,
+				A4555C3A209354530043CA8E /* BooksViewCintroller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A4555C1520934E080043CA8E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A4555C1620934E080043CA8E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A4555C1A20934E090043CA8E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -278,6 +433,7 @@
 		};
 		A4555C2120934E090043CA8E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6BC791CAF9F307F7AC1205A3 /* Pods-RealmSwiftDB.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -296,6 +452,7 @@
 		};
 		A4555C2220934E090043CA8E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B91EF739CC90F2E9CD221199 /* Pods-RealmSwiftDB.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
