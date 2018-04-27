@@ -16,8 +16,8 @@ class GenresViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        //genres = realm.objects(Genre.self)
+   
+        genres = realm.objects(Genre.self)
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {

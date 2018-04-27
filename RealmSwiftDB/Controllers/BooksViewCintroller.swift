@@ -11,27 +11,32 @@ import RealmSwift
 
 class BooksViewController: UITableViewController {
     
-    var books: Results<Book>!
+    var books: [Book] = []
     var genreFilter: Genre? = nil
     var pubHouseFilter: PublishingHouse? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let realm = try! Realm()
-        
-        try! realm.write {
-            let book = Book()
-            book.name = book.idBook
-            realm.add(book)
+
+        //filteres by genre
+        if let filter = genreFilter {
+            books = realm.objects(Book.self).map{$0}
+            var booksTmp = [Book]()
+            for book in books {
+                if book.genres.contains(filter) {
+                    booksTmp.append(book)
+                }
+            }
+            books = booksTmp
+            return
         }
-        books = realm.objects(Book.self)
-        
-        if genreFilter != nil {
-            books = books.filter("genres.contains(filter)")
+        //filtered by publication house
+        if let filter = pubHouseFilter{
+            books = realm.objects(Book.self).filter(NSPredicate(format: "pubHouse == %@", filter)).map{$0}
+            return
         }
-        if pubHouseFilter != nil {
-            books = books.filter("pubHouse == filter")
-        }
+        //no any filtration
+        books = realm.objects(Book.self).map{$0}
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -39,7 +44,7 @@ class BooksViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return books?.count ?? 0
+        return books.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -17,8 +17,7 @@ class PublishingHousesViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //publishingHouses = realm.objects(PublishingHouse.self)
-        
+        publishingHouses = realm.objects(PublishingHouse.self)
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {

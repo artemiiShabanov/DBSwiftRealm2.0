@@ -17,6 +17,8 @@ class BookInfoViewController: UIViewController {
     @IBOutlet weak var publHouseLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
     
+    
+    
     @IBAction func giveButtonPress(_ sender: Any) {
     }
 }

@@ -610,7 +610,7 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Publishing Houses" id="97S-em-Bc4"/>
                     <connections>
-                        <segue destination="JdP-Ry-ZFN" kind="show" identifier="HouseToBookSegue" id="Ev4-hm-Woc"/>
+                        <segue destination="JdP-Ry-ZFN" kind="show" identifier="PublishingHouseToBookSegue" id="Ev4-hm-Woc"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wml-IF-wCE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -994,6 +994,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="yG6-ZD-0VT"/>
+        <segue reference="Ev4-hm-Woc"/>
     </inferredMetricsTieBreakers>
 </document>
