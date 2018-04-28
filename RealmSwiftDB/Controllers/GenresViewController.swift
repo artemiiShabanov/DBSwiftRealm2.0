@@ -11,6 +11,8 @@ import RealmSwift
 
 class GenresViewController: UITableViewController {
    
+    static let ID = "GenresViewController_ID"
+
     var genres: Results<Genre>!
     var genre: Genre? = nil
     

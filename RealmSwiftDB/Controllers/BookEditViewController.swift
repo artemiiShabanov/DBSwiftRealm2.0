@@ -54,7 +54,21 @@ class BookEditViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
                 _book.comment = commentTextView.text!
                 _book.pubHouse = selectedHouse
             }
+        } else {
+            book = Book()
+            book!.name = nameTextField.text!
+            book!.author = authorTextField.text!
+            book!.pubYear =  Int(publYearTextField.text!)!
+            book!.picAuthor = picAuthorTextField.text!
+            book!.translator = translaterTextField.text!
+            book!.comment = commentTextView.text!
+            book!.pubHouse = selectedHouse
+            try! realm.write {
+                realm.add(book!)
+            }
         }
+        
+        
         _ = navigationController?.popViewController(animated: true)
         
     }

@@ -11,6 +11,8 @@ import RealmSwift
 
 class BooksViewController: UITableViewController {
     
+    static let ID = "BooksViewController_ID"
+    
     var book: Book? = nil
     var books: [Book] = []
     var genreFilter: Genre? = nil
@@ -56,7 +58,10 @@ class BooksViewController: UITableViewController {
         tableView.reloadData()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
+        if genreFilter ==  nil && pubHouseFilter == nil {
+            books = realm.objects(Book.self).map{$0}
+        }
         tableView.reloadData()
     }
     
@@ -88,5 +93,8 @@ class BooksViewController: UITableViewController {
         if let destination = segue.destination as? BookInfoViewController {
             destination.book = book!
         }
+    }
+    @IBAction func addButtonPress(_ sender: Any) {
+        print("add book")
     }
 }

@@ -10,6 +10,8 @@ import UIKit
 import RealmSwift
 
 class FriendsViewController: UITableViewController {
+
+    static let ID = "FriendsViewController_ID"
     
     var friend: Friend? = nil
     var friends: [Friend] = []
@@ -17,17 +19,18 @@ class FriendsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        try! realm.write {
-            let friend = Friend()
-            friend.FIO = "aa"
-            realm.add(friend)
-        }
+//        try! realm.write {
+//            let friend = Friend()
+//            friend.FIO = "aa"
+//            realm.add(friend)
+//        }
         
-        friends = realm.objects(Friend.self).map{$0}
-        tableView.reloadData()
+//        friends = realm.objects(Friend.self).map{$0}
+//        tableView.reloadData()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
+        friends = realm.objects(Friend.self).map{$0}
         tableView.reloadData()
     }
     

@@ -15,7 +15,7 @@
         <!--Friends-->
         <scene sceneID="7J5-6z-LKQ">
             <objects>
-                <tableViewController id="thG-tu-JQr" customClass="FriendsViewController" customModule="RealmSwiftDB" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController restorationIdentifier="FriendsViewController_ID" id="thG-tu-JQr" customClass="FriendsViewController" customModule="RealmSwiftDB" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="qsN-qC-ngo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -82,7 +82,7 @@
         <!--Books-->
         <scene sceneID="TZe-yX-Lnf">
             <objects>
-                <tableViewController id="JdP-Ry-ZFN" customClass="BooksViewController" customModule="RealmSwiftDB" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController restorationIdentifier="BooksViewController_ID" id="JdP-Ry-ZFN" customClass="BooksViewController" customModule="RealmSwiftDB" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="aIb-cQ-hmA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -148,7 +148,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eIH-Ad-JEE">
-                                <rect key="frame" x="155" y="79" width="66.5" height="31.5"/>
+                                <rect key="frame" x="154.5" y="79" width="66.5" height="31.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="xif-Kn-RED"/>
                                 </constraints>
@@ -338,7 +338,7 @@
         <!--Edit book-->
         <scene sceneID="frJ-Dq-gbi">
             <objects>
-                <viewController id="xuq-yk-vdY" customClass="BookEditViewController" customModule="RealmSwiftDB" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditAddBook" id="xuq-yk-vdY" customClass="BookEditViewController" customModule="RealmSwiftDB" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nH4-tw-UH2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="970"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -555,10 +555,14 @@
         <!--Tab Bar Controller-->
         <scene sceneID="c78-qf-Mh3">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Qhs-1C-h8a" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Qhs-1C-h8a" customClass="TabBarController" customModule="RealmSwiftDB" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="4gX-XO-BWY">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="kmX-E8-iCw"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="kmX-E8-iCw">
+                            <connections>
+                                <action selector="addButtonPress:" destination="Qhs-1C-h8a" id="AeH-o6-xKw"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Voi-oN-4BY">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -579,7 +583,7 @@
         <!--Publishing Houses-->
         <scene sceneID="89b-0t-KjM">
             <objects>
-                <tableViewController id="zJy-kr-JHH" customClass="PublishingHousesViewController" customModule="RealmSwiftDB" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController restorationIdentifier="PublishingHousesViewController_ID" id="zJy-kr-JHH" customClass="PublishingHousesViewController" customModule="RealmSwiftDB" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="AXj-ex-NKN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -627,7 +631,7 @@
         <!--Genre-->
         <scene sceneID="mjB-CL-yES">
             <objects>
-                <tableViewController id="mml-Ix-abK" customClass="GenresViewController" customModule="RealmSwiftDB" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController restorationIdentifier="GenresViewController_ID" id="mml-Ix-abK" customClass="GenresViewController" customModule="RealmSwiftDB" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="YBV-Vj-kSh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -835,7 +839,7 @@
         <!--Edit friend-->
         <scene sceneID="csw-3P-Hlw">
             <objects>
-                <viewController id="fN0-AF-sr8" customClass="FriendEditViewController" customModule="RealmSwiftDB" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditAddFriend" id="fN0-AF-sr8" customClass="FriendEditViewController" customModule="RealmSwiftDB" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9uX-EB-UWl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1007,6 +1011,6 @@
         <image name="img_house" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yG6-ZD-0VT"/>
+        <segue reference="EFs-hc-f6T"/>
     </inferredMetricsTieBreakers>
 </document>

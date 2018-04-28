@@ -38,7 +38,7 @@ class BookInfoViewController: UIViewController {
             }
         }
     }
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         
         if let selectedBook = book {

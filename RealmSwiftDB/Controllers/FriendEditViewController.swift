@@ -41,6 +41,16 @@ class FriendEditViewController: UIViewController {
                 _friend.email = emailTextField.text!
                 _friend.comment = commentTextField.text!
             }
+        }else {
+            friend = Friend()
+            friend!.FIO = FIOTextField.text!
+            friend!.phoneNumber = Int(phoneNumberTextField.text!)!
+            friend!.socialNumber = socialNumberTextField.text!
+            friend!.email = emailTextField.text!
+            friend!.comment = commentTextField.text!
+            try! realm.write {
+                realm.add(friend!)
+            }
         }
         _ = navigationController?.popViewController(animated: true)
     }

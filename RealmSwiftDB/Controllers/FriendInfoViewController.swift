@@ -18,7 +18,7 @@ class FriendInfoViewController: UIViewController {
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         
         if let selectedFriend = friend {
