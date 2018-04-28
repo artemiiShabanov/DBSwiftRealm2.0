@@ -8,15 +8,19 @@
 
 import UIKit
 
-class FriendInfoViewController: UIViewController {
+class FriendInfoViewController: UIViewController, Givable, UITableViewDelegate, UITableViewDataSource {
     
     var friend:Friend? = nil
     
+    var giveView: GiveView!
+    var books: [Book]!
+
     @IBOutlet weak var FIOLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
     @IBOutlet weak var socialNumberLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
+    @IBOutlet weak var giveButton: UIButton!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(true)
@@ -37,6 +41,50 @@ class FriendInfoViewController: UIViewController {
     }
     
     @IBAction func giveButtonPress(_ sender: Any) {
+        guard giveView == nil else {
+            return
+        }
+        
+        // ???
+        let borrowing = realm.objects(Borrowing.self)
+        let booksSet = Set(borrowing.value(forKey: "book") as! [Book])
+        books = Array(booksSet.subtracting(realm.objects(Book.self)))
+        
+        giveView = GiveView()
+        giveView.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "friendCell")
+        giveView.tableView.delegate = self
+        giveView.tableView.dataSource = self
+        giveView?.onExitPress = {
+            self.giveView = nil
+            self.navigationController?.navigationBar.isHidden = false
+        }
+        
+        giveView.show(in: self)
+        navigationController?.navigationBar.isHidden = true
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return books.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "friendCell", for: indexPath as IndexPath)
+        cell.textLabel!.text = "\(books[indexPath.row].name) \(books[indexPath.row].author)"
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let borrowing = Borrowing()
+        borrowing.book = books[indexPath.row]
+        borrowing.friend = friend
+        borrowing.borrowDate = NSDate()
+        
+        try! realm.write {
+            realm.add(borrowing)
+        }
+        
+        giveView.hide()
+        self.navigationController?.navigationBar.isHidden = false
     }
 }
 

@@ -18,18 +18,9 @@ class FriendsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        try! realm.write {
-//            let friend = Friend()
-//            friend.FIO = "aa"
-//            realm.add(friend)
-//        }
-        
-//        friends = realm.objects(Friend.self).map{$0}
-//        tableView.reloadData()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         friends = realm.objects(Friend.self).map{$0}
         tableView.reloadData()
     }

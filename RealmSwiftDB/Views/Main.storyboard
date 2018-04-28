@@ -830,6 +830,7 @@
                         <outlet property="FIOLabel" destination="gua-5s-TjW" id="fbe-YM-355"/>
                         <outlet property="commentLabel" destination="DQ0-mS-V8a" id="uAa-dK-Gxm"/>
                         <outlet property="emailLabel" destination="eYb-gb-jJh" id="CjE-gj-csp"/>
+                        <outlet property="giveButton" destination="caN-e7-AGY" id="Mrg-ta-NU5"/>
                         <outlet property="phoneNumberLabel" destination="iM0-R1-Hae" id="9uM-gd-D0t"/>
                         <outlet property="socialNumberLabel" destination="HRg-Vo-Hi2" id="EAq-d1-pRz"/>
                     </connections>

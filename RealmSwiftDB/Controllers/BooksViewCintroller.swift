@@ -58,7 +58,7 @@ class BooksViewController: UITableViewController {
         tableView.reloadData()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         if genreFilter ==  nil && pubHouseFilter == nil {
             books = realm.objects(Book.self).map{$0}
         }
