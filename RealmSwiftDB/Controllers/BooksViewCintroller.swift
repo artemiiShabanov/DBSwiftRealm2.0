@@ -48,7 +48,7 @@ class BooksViewController: UITableViewController {
             return
         }
         //filtered by publication house
-        if let filter = pubHouseFilter{
+        if let filter = pubHouseFilter {
             books = realm.objects(Book.self).filter(NSPredicate(format: "pubHouse == %@", filter)).map{$0}
             tableView.reloadData()
             return
@@ -93,8 +93,5 @@ class BooksViewController: UITableViewController {
         if let destination = segue.destination as? BookInfoViewController {
             destination.book = book!
         }
-    }
-    @IBAction func addButtonPress(_ sender: Any) {
-        print("add book")
     }
 }

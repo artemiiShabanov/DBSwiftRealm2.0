@@ -10,9 +10,9 @@ import Foundation
 import RealmSwift
 
 class Borrowing: Object {
-    @objc dynamic let book: Book? = nil
-    @objc dynamic let friend: Friend? = nil
-    @objc dynamic let borrowDate = NSDate()
+    @objc dynamic var book: Book? = nil
+    @objc dynamic var friend: Friend? = nil
+    @objc dynamic var borrowDate = NSDate()
     
     @objc dynamic var isLost = false
     @objc dynamic var isDamaged = false

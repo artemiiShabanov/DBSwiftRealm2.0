@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		496786812094E92000E98C00 /* Givable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496786802094E92000E98C00 /* Givable.swift */; };
+		496786832094E96D00E98C00 /* GiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496786822094E96D00E98C00 /* GiveView.swift */; };
 		497973F520944E98006C45FF /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497973F420944E98006C45FF /* TabBarController.swift */; };
 		8961E73D478CE94639F775A1 /* Pods_RealmSwiftDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E210C26E02B85E390DCA627F /* Pods_RealmSwiftDB.framework */; };
 		A40799FF2093BFB6008FE268 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40799FE2093BFB6008FE268 /* UIExtensions.swift */; };
@@ -34,6 +36,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		496786802094E92000E98C00 /* Givable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Givable.swift; sourceTree = "<group>"; };
+		496786822094E96D00E98C00 /* GiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiveView.swift; sourceTree = "<group>"; };
 		497973F420944E98006C45FF /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		6BC791CAF9F307F7AC1205A3 /* Pods-RealmSwiftDB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmSwiftDB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RealmSwiftDB/Pods-RealmSwiftDB.debug.xcconfig"; sourceTree = "<group>"; };
 		A40799FE2093BFB6008FE268 /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
@@ -76,6 +80,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4967867F2094E81900E98C00 /* Give */ = {
+			isa = PBXGroup;
+			children = (
+				496786802094E92000E98C00 /* Givable.swift */,
+				496786822094E96D00E98C00 /* GiveView.swift */,
+			);
+			path = Give;
+			sourceTree = "<group>";
+		};
 		559DA1F8E6253D0D2E748FC6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +150,7 @@
 		A4555C232093515A0043CA8E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4967867F2094E81900E98C00 /* Give */,
 				A4555C49209354F00043CA8E /* Main.storyboard */,
 				A4555C40209354AE0043CA8E /* Cells */,
 			);
@@ -297,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A40799FF2093BFB6008FE268 /* UIExtensions.swift in Sources */,
+				496786832094E96D00E98C00 /* GiveView.swift in Sources */,
 				A4555C3D209354530043CA8E /* PublishingHousesViewController.swift in Sources */,
 				A4555C47209354D60043CA8E /* PublishingHouseTableViewCell.swift in Sources */,
 				A4555C3C209354530043CA8E /* GenresViewController.swift in Sources */,
@@ -309,6 +324,7 @@
 				A4555C46209354D60043CA8E /* BookTableViewCell.swift in Sources */,
 				A4555C1220934E070043CA8E /* AppDelegate.swift in Sources */,
 				A4555C3E209354530043CA8E /* FriendInfoViewController.swift in Sources */,
+				496786812094E92000E98C00 /* Givable.swift in Sources */,
 				A4555C27209351800043CA8E /* Book.swift in Sources */,
 				A4555C292093518A0043CA8E /* Friend.swift in Sources */,
 				A4555C2F209351B80043CA8E /* Borrowing.swift in Sources */,

@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -144,7 +143,8 @@
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="giveButtonPress:" destination="uQH-Rn-tVX" eventType="touchUpInside" id="OXW-tL-WgT"/>
+                                    <action selector="giveButtonPress:" destination="bl6-x8-aQq" eventType="touchUpInside" id="MTH-La-xTF"/>
+                                    <action selector="giveButtonPress:" destination="uQH-Rn-tVX" eventType="touchUpInside" id="Muk-Qb-Aqm"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eIH-Ad-JEE">
@@ -324,6 +324,7 @@
                         <outlet property="authorLabel" destination="QBC-ig-hTl" id="48x-lV-pOy"/>
                         <outlet property="commentLabel" destination="Hsf-Zp-zUb" id="CCk-pq-rFe"/>
                         <outlet property="genresLabel" destination="Hsf-Zp-zUb" id="yKb-A0-S6F"/>
+                        <outlet property="giveButton" destination="654-ce-AvO" id="Amf-7f-Up0"/>
                         <outlet property="nameLabel" destination="eIH-Ad-JEE" id="hbh-89-0bm"/>
                         <outlet property="picAuthorLabel" destination="ScV-Le-dgZ" id="8ok-LU-Bgn"/>
                         <outlet property="publHouseLabel" destination="Ca3-wq-fFc" id="6cK-uJ-gR9"/>
@@ -332,6 +333,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t9g-sO-Iwq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="bl6-x8-aQq" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2484" y="983"/>
         </scene>
