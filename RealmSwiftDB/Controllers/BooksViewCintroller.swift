@@ -36,17 +36,18 @@ class BooksViewController: UITableViewController {
         
         //filteres by genre
         if let filter = genreFilter {
-            books = realm.objects(Book.self).map{$0}
-            var booksTmp = [Book]()
-            for book in books {
-                if book.genres.contains(filter) {
-                    booksTmp.append(book)
-                }
+            
+            books = realm.objects(Book.self).filter(NSPredicate(format: "%@ IN genres  ", filter)).map{$0}
+            let subgenres = getSubgenres(for: filter)
+            
+            for subgenre in subgenres {
+                books.append(contentsOf: realm.objects(Book.self).filter(NSPredicate(format: "%@ IN genres  ", subgenre)).map{$0})
             }
-            books = booksTmp
+
             tableView.reloadData()
             return
         }
+        
         //filtered by publication house
         if let filter = pubHouseFilter {
             books = realm.objects(Book.self).filter(NSPredicate(format: "pubHouse == %@", filter)).map{$0}
@@ -56,6 +57,15 @@ class BooksViewController: UITableViewController {
         //no any filtration
         books = realm.objects(Book.self).map{$0}
         tableView.reloadData()
+    }
+    
+    func getSubgenres(for genre: Genre) -> [Genre] {
+        var subgenres: [Genre] = realm.objects(Genre.self).filter(NSPredicate(format: "parentGenre == %@", genre)).map{$0}
+        
+        for g in subgenres {
+            subgenres.append(contentsOf: getSubgenres(for: (g)))
+        }
+        return subgenres
     }
     
     override func viewDidAppear(_ animated: Bool) {

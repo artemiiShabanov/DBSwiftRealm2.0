@@ -49,7 +49,4 @@ class PublishingHousesViewController: UITableViewController {
             destination.pubHouseFilter = pubHouse!
         }
     }
-    @IBAction func addButtonPress(_ sender: Any) {
-        print("")
-    }
 }

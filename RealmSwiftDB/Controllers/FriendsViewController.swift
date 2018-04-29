@@ -29,25 +29,29 @@ class FriendsViewController: UITableViewController {
         friends = realm.objects(Friend.self).map{$0}
         tableView.reloadData()
         
-//        
+        
 //        let genre1 = Genre()
 //        genre1.name = "ДЕТЕКТИВЫ"
-//        
+//
 //        let genre2 = Genre()
 //        genre2.name = "Исторические детективы"
-//        
+//        genre2.parentGenre = genre1
+//
 //        let genre3 = Genre()
 //        genre3.name = "Классические детективы"
-//        
+//        genre3.parentGenre = genre1
+//
 //        let genre4 = Genre()
 //        genre4.name = "ДОКУМЕНТАЛЬНЫЕ"
-//        
+//
 //        let genre5 = Genre()
 //        genre5.name = "Искусство"
-//        
+//        genre5.parentGenre = genre4
+//
 //        let genre6 = Genre()
 //        genre6.name = "Биографии и Мемуары"
-//        
+//        genre6.parentGenre = genre4
+//
 //        try! realm.write {
 //            realm.deleteAll()
 //            realm.add(genre1)
@@ -57,27 +61,44 @@ class FriendsViewController: UITableViewController {
 //            realm.add(genre5)
 //            realm.add(genre6)
 //        }
-//        
+//
 //        let publHouse1 = PublishingHouse()
 //        publHouse1.name = "publHouse1"
-//        
+//
 //        let publHouse2 = PublishingHouse()
 //        publHouse2.name = "publHouse2"
-//        
+//
 //        let publHouse3 = PublishingHouse()
 //        publHouse3.name = "publHouse3"
-//        
+//
 //        let publHouse4 = PublishingHouse()
 //        publHouse4.name = "publHouse4"
-//        
+//
 //        try! realm.write {
 //            realm.add(publHouse1)
 //            realm.add(publHouse2)
 //            realm.add(publHouse3)
 //            realm.add(publHouse4)
 //        }
-        
-        
+//
+//        let book2 = Book()
+//        book2.name = "book2"
+//        book2.author = "author2"
+//        book2.comment = "comment2"
+//        book2.genres.append(genre5)
+//        book2.pubYear = 2018
+//        
+//        let book3 = Book()
+//        book3.name = "book3"
+//        book3.author = "author3"
+//        book3.comment = "comment3"
+//        book3.genres.append(genre1)
+//        book3.pubYear = 2018
+//        
+//        try! realm.write {
+//            realm.add(book2)
+//            realm.add(book3)
+//        }
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {

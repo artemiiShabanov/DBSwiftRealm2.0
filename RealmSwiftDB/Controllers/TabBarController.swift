@@ -10,10 +10,6 @@ import Foundation
 import UIKit
 
 class TabBarController: UITabBarController {
-    override func viewWillAppear(_ animated: Bool) {
-        print("!")
-    }
-    
     @IBAction func addButtonPress(_ sender: Any) {
         var vc: UIViewController!
         switch selectedViewController?.restorationIdentifier {
