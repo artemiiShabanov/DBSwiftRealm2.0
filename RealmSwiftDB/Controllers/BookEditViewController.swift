@@ -8,12 +8,13 @@
 
 import UIKit
 
-class BookEditViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class BookEditViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDelegate, UITableViewDataSource {
     
     var book: Book? = nil
     var houses: [String] = [String]()
     var selectedHouse: PublishingHouse? = nil
-    
+    var genres: [Genre] = []
+
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var authorTextField: UITextField!
     @IBOutlet weak var publYearTextField: UITextField!
@@ -21,11 +22,12 @@ class BookEditViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     @IBOutlet weak var translaterTextField: UITextField!
     @IBOutlet weak var publHousePickerView: UIPickerView!
     @IBOutlet weak var commentTextView: UITextView!
+    @IBOutlet weak var genresTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let gestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(hideKeyboard))
-        self.view.addGestureRecognizer(gestureRecognizer)
+//        let gestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(hideKeyboard))
+//        self.view.addGestureRecognizer(gestureRecognizer)
         publYearTextField.keyboardType = UIKeyboardType.numberPad
         
         for house in realm.objects(PublishingHouse.self) {
@@ -34,6 +36,12 @@ class BookEditViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         publHousePickerView.dataSource = self
         publHousePickerView.delegate = self
         
+        genresTableView.delegate = self
+        genresTableView.dataSource = self
+
+        genresTableView.allowsSelection = true
+        genresTableView.allowsMultipleSelection = true
+
         if let selectedBook = book {
             nameTextField.text = selectedBook.name
             authorTextField.text = selectedBook.author
@@ -42,7 +50,8 @@ class BookEditViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
             translaterTextField.text = selectedBook.translator
             commentTextView.text = selectedBook.comment
         }
-    }
+        genres = realm.objects(Genre.self).map{$0}
+ }
     
     @objc func hideKeyboard() {
         nameTextField.resignFirstResponder()
@@ -63,6 +72,11 @@ class BookEditViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
                 _book.translator = translaterTextField.text!
                 _book.comment = commentTextView.text!
                 _book.pubHouse = selectedHouse
+                _book.genres.removeAll()
+                for ip in genresTableView.indexPathsForSelectedRows ?? [] {
+                    _book.genres.append(genres[ip.row])
+                }
+
             }
         } else {
             book = Book()
@@ -73,6 +87,11 @@ class BookEditViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
             book!.translator = translaterTextField.text!
             book!.comment = commentTextView.text!
             book!.pubHouse = selectedHouse
+            book!.genres.removeAll()
+            for ip in genresTableView.indexPathsForSelectedRows ?? [] {
+                book!.genres.append(genres[ip.row])
+            }
+
             try! realm.write {
                 realm.add(book!)
             }
@@ -93,11 +112,31 @@ class BookEditViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if let selectedBook = book {
+            if (houses[row] == selectedBook.pubHouse?.name) {
+                pickerView.selectRow(row, inComponent: component, animated: false)
+            }
+        }
         return houses[row]
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectedHouse = realm.objects(PublishingHouse.self).filter("name = %@", houses[row]).first
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return genres.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "genreCell", for: indexPath as IndexPath)
+        cell.textLabel!.text = "\(genres[indexPath.row].name)"
+        if let selectedBook = book {
+            if (selectedBook.genres.map{$0.name}.contains(genres[indexPath.row].name)) {
+                tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
+            }
+        }
+        return cell
     }
 }
 

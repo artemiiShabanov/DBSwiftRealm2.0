@@ -380,6 +380,16 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="150" id="66u-ZC-FNy"/>
                                                 </constraints>
+                                                <prototypes>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="genreCell" id="xO3-AP-Mzg">
+                                                        <rect key="frame" x="0.0" y="28" width="345" height="44"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xO3-AP-Mzg" id="V9G-Pf-gTD">
+                                                            <rect key="frame" x="0.0" y="0.0" width="345" height="43.5"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </tableViewCellContentView>
+                                                    </tableViewCell>
+                                                </prototypes>
                                             </tableView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZx-pF-2Bl">
                                                 <rect key="frame" x="20" y="95" width="46.5" height="18"/>
@@ -543,6 +553,7 @@
                     <connections>
                         <outlet property="authorTextField" destination="4DA-YC-l2q" id="Iq3-Zd-ipr"/>
                         <outlet property="commentTextView" destination="QJR-yS-Vck" id="Xi6-cg-uNw"/>
+                        <outlet property="genresTableView" destination="BC5-mM-zxD" id="N1F-YX-x3D"/>
                         <outlet property="nameTextField" destination="Z1Y-ps-flt" id="yrd-1n-jS1"/>
                         <outlet property="picAuthorTextField" destination="yON-gY-dVE" id="Amr-4D-xeb"/>
                         <outlet property="publHousePickerView" destination="0Wy-CT-q1Q" id="IDp-hH-KGK"/>
