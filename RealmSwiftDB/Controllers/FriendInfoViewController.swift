@@ -40,15 +40,12 @@ class FriendInfoViewController: UIViewController, Givable, UITableViewDelegate, 
         }
     }
     
-    @IBAction func giveButtonPress(_ sender: Any) {
+    @IBAction func returnButtonPress(_ sender: Any) {
         guard giveView == nil else {
             return
         }
         
-        // ??
-        let booksSet = Set(realm.objects(Borrowing.self).map{Book(value: $0.book)})
-        let allBooks = Set(realm.objects(Book.self))
-        books = Array(allBooks.subtracting(booksSet))
+        books = realm.objects(Borrowing.self).filter(NSPredicate(format: "friend == %@", friend!)).map{$0.book!}
         
         giveView = GiveView()
         giveView.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "friendCell")
@@ -74,13 +71,9 @@ class FriendInfoViewController: UIViewController, Givable, UITableViewDelegate, 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let borrowing = Borrowing()
-        borrowing.book = books[indexPath.row]
-        borrowing.friend = friend
-        borrowing.borrowDate = NSDate()
-        
+
         try! realm.write {
-            realm.add(borrowing)
+            realm.delete(realm.objects(Borrowing.self).filter(NSPredicate(format: "friend == %@ AND book == %@", friend!, books[indexPath.row])))
         }
         
         giveView.hide()

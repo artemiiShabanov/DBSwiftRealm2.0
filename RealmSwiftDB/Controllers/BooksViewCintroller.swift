@@ -37,11 +37,11 @@ class BooksViewController: UITableViewController {
         //filteres by genre
         if let filter = genreFilter {
             
-            books = realm.objects(Book.self).filter(NSPredicate(format: "%@ IN genres  ", filter)).map{$0}
+            books = realm.objects(Book.self).filter(NSPredicate(format: "%@ IN genres", filter)).map{$0}
             let subgenres = getSubgenres(for: filter)
             
             for subgenre in subgenres {
-                books.append(contentsOf: realm.objects(Book.self).filter(NSPredicate(format: "%@ IN genres  ", subgenre)).map{$0})
+                books.append(contentsOf: realm.objects(Book.self).filter(NSPredicate(format: "%@ IN genres", subgenre)).map{$0})
             }
 
             tableView.reloadData()

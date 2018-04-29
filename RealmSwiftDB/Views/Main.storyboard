@@ -690,11 +690,11 @@
                                 <rect key="frame" x="0.0" y="600.5" width="375" height="66.5"/>
                                 <color key="backgroundColor" red="0.97638529539108276" green="0.97652524709701538" blue="0.97635465860366821" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" title="Give">
+                                <state key="normal" title="Return">
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="giveButtonPress:" destination="cnm-57-dRj" eventType="touchUpInside" id="Pp2-rU-3a9"/>
+                                    <action selector="returnButtonPress:" destination="cnm-57-dRj" eventType="touchUpInside" id="Pp2-rU-3a9"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FIO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gua-5s-TjW">
