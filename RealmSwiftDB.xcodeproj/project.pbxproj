@@ -12,6 +12,7 @@
 		497973F520944E98006C45FF /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497973F420944E98006C45FF /* TabBarController.swift */; };
 		8961E73D478CE94639F775A1 /* Pods_RealmSwiftDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E210C26E02B85E390DCA627F /* Pods_RealmSwiftDB.framework */; };
 		A40799FF2093BFB6008FE268 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40799FE2093BFB6008FE268 /* UIExtensions.swift */; };
+		A417806320963B0C004A21D1 /* AutoLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = A417806220963B0C004A21D1 /* AutoLoad.swift */; };
 		A4555C1220934E070043CA8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4555C1120934E070043CA8E /* AppDelegate.swift */; };
 		A4555C1920934E090043CA8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4555C1820934E090043CA8E /* Assets.xcassets */; };
 		A4555C1C20934E090043CA8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4555C1A20934E090043CA8E /* LaunchScreen.storyboard */; };
@@ -41,6 +42,7 @@
 		497973F420944E98006C45FF /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		6BC791CAF9F307F7AC1205A3 /* Pods-RealmSwiftDB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmSwiftDB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RealmSwiftDB/Pods-RealmSwiftDB.debug.xcconfig"; sourceTree = "<group>"; };
 		A40799FE2093BFB6008FE268 /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
+		A417806220963B0C004A21D1 /* AutoLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLoad.swift; sourceTree = "<group>"; };
 		A4555C0E20934E070043CA8E /* RealmSwiftDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealmSwiftDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4555C1120934E070043CA8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4555C1820934E090043CA8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				A40799FE2093BFB6008FE268 /* UIExtensions.swift */,
+				A417806220963B0C004A21D1 /* AutoLoad.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				A40799FF2093BFB6008FE268 /* UIExtensions.swift in Sources */,
 				496786832094E96D00E98C00 /* GiveView.swift in Sources */,
 				A4555C3D209354530043CA8E /* PublishingHousesViewController.swift in Sources */,
+				A417806320963B0C004A21D1 /* AutoLoad.swift in Sources */,
 				A4555C47209354D60043CA8E /* PublishingHouseTableViewCell.swift in Sources */,
 				A4555C3C209354530043CA8E /* GenresViewController.swift in Sources */,
 				A4555C38209354530043CA8E /* FriendsViewController.swift in Sources */,
