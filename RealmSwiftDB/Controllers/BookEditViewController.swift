@@ -24,6 +24,8 @@ class BookEditViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let gestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(hideKeyboard))
+        self.view.addGestureRecognizer(gestureRecognizer)
         publYearTextField.keyboardType = UIKeyboardType.numberPad
         
         for house in realm.objects(PublishingHouse.self) {
@@ -42,6 +44,14 @@ class BookEditViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         }
     }
     
+    @objc func hideKeyboard() {
+        nameTextField.resignFirstResponder()
+        authorTextField.resignFirstResponder()
+        publYearTextField.resignFirstResponder()
+        translaterTextField.resignFirstResponder()
+        commentTextView.resignFirstResponder()
+    }
+
     @IBAction func saveButtonPress(_ sender: Any) {
         
         if let _book = book {

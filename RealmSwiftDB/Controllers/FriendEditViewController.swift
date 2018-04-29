@@ -21,6 +21,8 @@ class FriendEditViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let gestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(hideKeyboard))
+        self.view.addGestureRecognizer(gestureRecognizer)
         phoneNumberTextField.keyboardType = UIKeyboardType.numberPad
         
         if let selectedFriend = friend {
@@ -32,6 +34,14 @@ class FriendEditViewController: UIViewController {
         }
     }
     
+    @objc func hideKeyboard() {
+        FIOTextField.resignFirstResponder()
+        phoneNumberTextField.resignFirstResponder()
+        socialNumberTextField.resignFirstResponder()
+        emailTextField.resignFirstResponder()
+        commentTextField.resignFirstResponder()
+    }
+
     @IBAction func saveButtonPress(_ sender: Any) {
         if let _friend = friend {
             try! realm.write {

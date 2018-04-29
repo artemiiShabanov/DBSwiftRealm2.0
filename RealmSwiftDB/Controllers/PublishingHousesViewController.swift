@@ -18,14 +18,6 @@ class PublishingHousesViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        try! realm.write {
-            let ph = PublishingHouse()
-            ph.name = "bb"
-            
-            realm.add(ph)
-        }
-        
         publishingHouses = realm.objects(PublishingHouse.self)
     }
     

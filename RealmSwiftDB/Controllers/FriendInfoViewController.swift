@@ -45,10 +45,10 @@ class FriendInfoViewController: UIViewController, Givable, UITableViewDelegate, 
             return
         }
         
-        // ???
-        let borrowing = realm.objects(Borrowing.self)
-        let booksSet = Set(borrowing.value(forKey: "book") as! [Book])
-        books = Array(booksSet.subtracting(realm.objects(Book.self)))
+        // ??
+        let booksSet = Set(realm.objects(Borrowing.self).map{Book(value: $0.book)})
+        let allBooks = Set(realm.objects(Book.self))
+        books = Array(allBooks.subtracting(booksSet))
         
         giveView = GiveView()
         giveView.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "friendCell")
@@ -84,6 +84,7 @@ class FriendInfoViewController: UIViewController, Givable, UITableViewDelegate, 
         }
         
         giveView.hide()
+        giveView = nil
         self.navigationController?.navigationBar.isHidden = false
     }
 }
