@@ -22,6 +22,8 @@ class FriendsViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         
+
+        /*
                 let genre1 = Genre()
                 genre1.name = "ДЕТЕКТИВЫ"
         
@@ -91,6 +93,7 @@ class FriendsViewController: UITableViewController {
                     realm.add(book2)
                     realm.add(book3)
                 }
+ */
                 friends = realm.objects(Friend.self).map{$0}
                 tableView.reloadData()
  }

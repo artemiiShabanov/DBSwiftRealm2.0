@@ -49,6 +49,10 @@ class BookEditViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
             picAuthorTextField.text = selectedBook.picAuthor
             translaterTextField.text = selectedBook.translator
             commentTextView.text = selectedBook.comment
+            if let ph = selectedBook.pubHouse {
+                publHousePickerView.selectRow(houses.index(of: ph.name)!, inComponent: 0, animated: false)
+                selectedHouse = ph
+            }
         }
         genres = realm.objects(Genre.self).map{$0}
  }
@@ -67,7 +71,7 @@ class BookEditViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
             try! realm.write {
                 _book.name = nameTextField.text!
                 _book.author = authorTextField.text!
-                _book.pubYear =  Int(publYearTextField.text!)!
+                _book.pubYear =  Int(publYearTextField.text != "" ? publYearTextField.text! : "2000")!
                 _book.picAuthor = picAuthorTextField.text!
                 _book.translator = translaterTextField.text!
                 _book.comment = commentTextView.text!
@@ -82,7 +86,7 @@ class BookEditViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
             book = Book()
             book!.name = nameTextField.text!
             book!.author = authorTextField.text!
-            book!.pubYear =  Int(publYearTextField.text!)!
+            book!.pubYear =  Int(publYearTextField.text != "" ? publYearTextField.text! : "2000")!
             book!.picAuthor = picAuthorTextField.text!
             book!.translator = translaterTextField.text!
             book!.comment = commentTextView.text!
