@@ -46,7 +46,7 @@ class FriendEditViewController: UIViewController {
         if let _friend = friend {
             try! realm.write {
                 _friend.FIO = FIOTextField.text!
-                _friend.phoneNumber = Int(phoneNumberTextField.text! != "" ? phoneNumberTextField.text! : "0")!
+                _friend.phoneNumber = Int(phoneNumberTextField.text != "" ? phoneNumberTextField.text! : "0")!
                 _friend.socialNumber = socialNumberTextField.text!
                 _friend.email = emailTextField.text!
                 _friend.comment = commentTextField.text!
@@ -54,7 +54,7 @@ class FriendEditViewController: UIViewController {
         }else {
             friend = Friend()
             friend!.FIO = FIOTextField.text!
-            friend!.phoneNumber = Int(phoneNumberTextField.text! != "" ? phoneNumberTextField.text! : "0")!
+            friend!.phoneNumber = Int(phoneNumberTextField.text != "" ? phoneNumberTextField.text! : "0")!
             friend!.socialNumber = socialNumberTextField.text!
             friend!.email = emailTextField.text!
             friend!.comment = commentTextField.text!
